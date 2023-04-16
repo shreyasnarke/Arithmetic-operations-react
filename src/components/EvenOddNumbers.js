@@ -31,6 +31,8 @@
 //   );
 // };
 // export default EvenOddNumbers;
+
+
 import React,{useState}from 'react';
 const EvenOddNumbers=()=>{
   const [number,setNumber]=useState('');
@@ -46,14 +48,15 @@ const EvenOddNumbers=()=>{
   };
   const boxStyle={
     backgroundColor:isEven?'green':'red',
-    padding:'5px',
+    padding:'15px',
     size:'20%' ,
+    border:'1px',
     display:'inline-block',
   };
   return (
   <div>
     <input type="number" value={number} onChange={eventOccur}/>
-      <div style={boxStyle}>
+      <div className="container2" style={boxStyle}>
         <h1>Number:{number}</h1><br></br>
         <h2>{isEven?'Even':'Odd'}</h2>
       </div>
@@ -61,3 +64,51 @@ const EvenOddNumbers=()=>{
   );
 };
 export default EvenOddNumbers;
+
+
+// import React, { useState } from 'react';
+
+// const EvenOddNumbers = () => {
+//   const [numbers, setNumbers] = useState([]);
+//   const [number, setNumber] = useState('');
+//   const [isEven, setIsEven] = useState(false);
+
+//   const handleInputChange = (e) => {
+//     const inputValue = e.target.value;
+//     setNumber(inputValue);
+//     setIsEven(inputValue % 2 === 0);
+//   };
+
+//   const handleAddClick = () => {
+//     if (number !== '') {
+//       setNumbers([...numbers, number]);
+//       setNumber('');
+//     }
+//   };
+
+//   const boxColor = isEven ? 'green' : 'red';
+
+//   return (
+//     <div>
+//       <input
+//         type="number"
+//         value={number}
+//         onChange={handleInputChange}
+//         style={{ backgroundColor: boxColor }}
+//       />
+//       <button onClick={handleAddClick}>Add</button>
+//       <div style={{ display: 'flex', flexDirection: 'column-reverse' }}>
+//         {numbers.map((num, index) => (
+//           <div
+//             key={index}
+//             style={{ backgroundColor: num % 2 === 0 ? 'green' : 'red', padding: '5px', margin: '5px' }}
+//           >
+//             {num}
+//           </div>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default EvenOddNumbers;
