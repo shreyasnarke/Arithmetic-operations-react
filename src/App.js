@@ -3,7 +3,7 @@ import EvenOddNumbers from './components/EvenOddNumbers';
 function App() {
   return (
     <div className="App">
-      {/* <Prime></Prime> */}
+      {/* <Prime></Prime>  */}
       <EvenOddNumbers></EvenOddNumbers>
     </div>
   );

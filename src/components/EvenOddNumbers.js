@@ -31,40 +31,33 @@
 //   );
 // };
 // export default EvenOddNumbers;
-import React, { useState } from 'react';
-
-const EvenOddNumbers = () => {
-  const [number, setNumber] = useState('');
-  const [isEven, setIsEven] = useState(false);
-
-  const handleInputChange = (event) => {
-    const inputNumber = event.target.value;
+import React,{useState}from 'react';
+const EvenOddNumbers=()=>{
+  const [number,setNumber]=useState('');
+  const [isEven,setIsEven]=useState(false);
+  const eventOccur=(e)=>{
+    const inputNumber=e.target.value;
     setNumber(inputNumber);
-
-    // Check if input number is even or odd
-    if (inputNumber % 2 === 0) {
+    if(inputNumber%2===0){
       setIsEven(true);
-    } else {
+    }else{
       setIsEven(false);
     }
   };
-
-  const boxStyle = {
-    backgroundColor: isEven ? 'green' : 'red', // Change color based on whether it's even or odd
-    padding: '5px',
+  const boxStyle={
+    backgroundColor:isEven?'green':'red',
+    padding:'5px',
     size:'20%' ,
-    display: 'inline-block',
+    display:'inline-block',
   };
-
   return (
-    <div>
-      <input type="number" value={number} onChange={handleInputChange} />
+  <div>
+    <input type="number" value={number} onChange={eventOccur}/>
       <div style={boxStyle}>
-        <h1>Number: {number}</h1><br></br>
-        <h2>{isEven ? 'Even' : 'Odd'}</h2>
+        <h1>Number:{number}</h1><br></br>
+        <h2>{isEven?'Even':'Odd'}</h2>
       </div>
     </div>
   );
 };
-
 export default EvenOddNumbers;
